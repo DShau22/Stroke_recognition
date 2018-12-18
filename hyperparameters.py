@@ -39,6 +39,12 @@ hparams = tf.contrib.training.HParams(
     max_iterations = 10, #int(1e6),
     print_loss_freq = 32,
     writing_frequency = 32,
+    learning_rate = .0003,
+	max_steps = 10,
+	batch_size = 1,
+	optimizer_name = "Adam",
+	train_loss_frequency = 16,
+	val_loss_frequency = 32,
 
 	# Logging Parameters
 	log_dir = "logs/",
@@ -52,14 +58,6 @@ hparams = tf.contrib.training.HParams(
 	inst_dir = "/.audio/training_data/instrumentals",
 	val_split = 0.8,
 	max_input_snr = 5,
-
-	# Training Parameters
-    learning_rate = .0003,
-	max_steps = int(2e6),
-	batch_size = 128,
-	optimizer_name = "Adam",
-	train_loss_frequency = 16,
-	val_loss_frequency = 32,
 
 	print_loss_frequency = 16,
 	save_model_interval = 600,
