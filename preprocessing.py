@@ -1,7 +1,44 @@
+import hyperparameters
+import random
 #creates a big ass list: each entry is a pair, first is label, second is acc data, pop it while training
 #For now, just segments a sample data text file into strokes
+hparams = hyperparameters.hparams
+#puts data from text file to numpy array of shape (3, filelength - 600)
+def allocate_data(text_file_path):
+    #text file has x, y, z accs in x, y, z \n format for every .1 secs
+    #take out first minute
+    total_accs = np.array([[],[],[]])
+    with open(text_file_path) as f:
+        for i in range(600):
+            f.readline()
+        for line in f:
+            line = line.strip('\n')
+            accs = line.split(",")
+            if any(["-" == el for el in accs]):
+                for i in range(len(accs)):
+                    try:
+                        accs[accs.index("-")] = 0
+                    except ValueError:
+                        pass
+            while len(accs) < 3:
+                accs.append(0)
+            #accs should now be arr of length 3 with integer entries
+            total_accs[0].append(accs[0])
+            total_accs[1].append(accs[1])
+            total_accs[2].append(accs[2])
+        return total_accs
 
-def preprocess():#num_turns, exclude_ranges):
+#splits data from numpy array into batch_size number of random segments of shape (3, window size)
+def make_batch(total_accs):
+    num_measurements = len(total_accs[0]) #number of accerelation measurements per axis
+    random_index = random.randint(0, num_measurements - hparams.batch_size - 1)
+    batch = np.array([])
+    for i in range(hparams.batch_size):
+        batch.append(total_accs[0:len(total_accs),
+                                random_index:random_index + hparams.batch_size])
+    return batch
+
+def preprocess(): #used to test if train works for now
      #arr of x, y, z accelerations over time
     stroke_data = [[],[],[]] #for now just butterfly
     pair = [[], []] #pair for feed_dict

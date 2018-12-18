@@ -42,7 +42,6 @@ hparams = tf.contrib.training.HParams(
     learning_rate = .0003,
 	max_steps = 10,
 	batch_size = 1,
-	optimizer_name = "Adam",
 	train_loss_frequency = 16,
 	val_loss_frequency = 32,
 
@@ -52,12 +51,8 @@ hparams = tf.contrib.training.HParams(
 	log_file_val = "logs/loss_val.txt",
 
 	# Data Parameters
-	data_dir = "MIR-1K/Wavfile/",
-	mix_dir = "/.audio/training_data/total_track",
-	voc_dir = "/.audio/training_data/vocals",
-	inst_dir = "/.audio/training_data/instrumentals",
-	val_split = 0.8,
-	max_input_snr = 5,
+	raw_data_dir = "MIR-1K/Wavfile/",
+    aug_data_dir = "*****************",
 
 	print_loss_frequency = 16,
 	save_model_interval = 600,
