@@ -15,14 +15,15 @@ def main():
     #don't actually use loss for now
     loss, optimizer, accuracy, data_placeholder, label_placeholder = graph.build_graph(hparams)
     #input_data = preprocessing.preprocess()
+    preprocessing.augment_data(hparams.raw_data_dir, hparams.aug_data_dir)
     """pseudocode"""
     # augment_all_data()
     # fly = split_data(fly)
     # back = split_data(back)
     # breast = split_data(breast)
     # free = split_data(free)
-    # input_data = random_splits_of_size_batch_size
-    train.run_training(hparams, data_placeholder, label_placeholder, optimizer, accuracy, input_data)
+    # input_data = make_batch(fly)
+    #train.run_training(hparams, data_placeholder, label_placeholder, optimizer, accuracy, input_data)
 
 if __name__ == '__main__':
 	main()

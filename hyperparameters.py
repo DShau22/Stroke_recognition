@@ -51,8 +51,9 @@ hparams = tf.contrib.training.HParams(
 	log_file_val = "logs/loss_val.txt",
 
 	# Data Parameters
-	raw_data_dir = "MIR-1K/Wavfile/",
-    aug_data_dir = "*****************",
+	raw_data_dir = "./data/",
+    aug_data_dir = "./aug_data/",
+    rotation_angle = .2, #in radians
 
 	print_loss_frequency = 16,
 	save_model_interval = 600,
