@@ -41,18 +41,17 @@ hparams = tf.contrib.training.HParams(
     writing_frequency = 32,
     learning_rate = .0003,
 	max_steps = 10,
-	batch_size = 1,
+	batch_size = 128,
 	train_loss_frequency = 16,
 	val_loss_frequency = 32,
 
 	# Logging Parameters
-	log_dir = "logs/",
-	log_file_train = "logs/loss.txt",
-	log_file_val = "logs/loss_val.txt",
+	log_dir = "/logs/",
+	log_file_train = "/logs/loss.txt",
+	log_file_val = "/logs/loss_val.txt",
 
 	# Data Parameters
-	raw_data_dir = "./data/",
-    aug_data_dir = "./aug_data/",
+	data_dir = "./stroke_data/",
     rotation_angle = .2, #in radians
 
 	print_loss_frequency = 16,

@@ -15,8 +15,7 @@ def main():
     print("Log directory: %s" % hparams.log_dir)
     #don't actually use loss for now
     loss, optimizer, accuracy, data_placeholder, label_placeholder = graph.build_graph(hparams)
-    sign_changer.function()
-    #input_data = preprocessing.preprocess()
+    input_data = preprocessing.preprocess(hparams, 'freestyle')
     #preprocessing.augment_data(hparams.raw_data_dir, hparams.aug_data_dir)
     """pseudocode"""
     # augment_all_data()
@@ -25,7 +24,7 @@ def main():
     # breast = split_data(breast)
     # free = split_data(free)
     # input_data = make_batch(fly)
-    #train.run_training(hparams, data_placeholder, label_placeholder, optimizer, accuracy, input_data)
+    train.run_training(hparams, data_placeholder, label_placeholder, optimizer, accuracy, input_data)
 
 if __name__ == '__main__':
 	main()

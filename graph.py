@@ -59,7 +59,7 @@ def build_graph(hparams):
 
     #placeholders
     x = tf.placeholder(tf.float32, shape=[None, hparams.window_size], name='before-reshape')
-    x_input = tf.reshape(x, [-1, hparams.window_size, hparams.input_width, hparams.input_channels], name='reshaped')
+    x_input = tf.reshape(x, [-1, hparams.window_size, hparams.input_width, hparams.input_channels], name='input')
 
     y_true = tf.placeholder(tf.float32, shape=[None, hparams.num_classes], name='true_value') #one-hot
     y_class = tf.argmax(y_true, axis=1) #take the max entry in y_true, this is true stroke
