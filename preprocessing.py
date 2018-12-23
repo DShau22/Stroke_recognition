@@ -12,7 +12,6 @@ hparams = hyperparameters.hparams
 def augment_data(raw_data_dir, aug_data_dir):
     os.chdir(raw_data_dir)
     for filename in glob.glob('*.txt'):
-        print(filename)
         with open(filename, 'r') as raw:
             with open("aug_" + filename, "w+") as aug:
                 for raw_line in raw:
