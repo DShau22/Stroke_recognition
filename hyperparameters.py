@@ -36,7 +36,7 @@ hparams = tf.contrib.training.HParams(
     filter_width3 = 1,
 
     #Training parameters
-    max_iterations = 10, #int(1e6),
+    max_iterations = 256 , #int(1e6),
     print_loss_freq = 32,
     writing_frequency = 32,
     learning_rate = .0003,
@@ -49,6 +49,7 @@ hparams = tf.contrib.training.HParams(
 	log_dir = "/logs/",
 	log_file_train = "/logs/loss.txt",
 	log_file_val = "/logs/loss_val.txt",
+    tensorboard_ouput_freq = 32,
 
 	# Data Parameters
 	data_dir = "./stroke_data/",

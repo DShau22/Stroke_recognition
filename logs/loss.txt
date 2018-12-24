@@ -1,0 +1,190 @@
+
+**************** NEW TRAINING SESSION ****************
+
+***** ITERATION: 0, TRAINING ACCURACY: 1.0 *****
+
+***** ITERATION: 32, TRAINING ACCURACY: 1.0 *****
+
+***** ITERATION: 64, TRAINING ACCURACY: 1.0 *****
+
+***** ITERATION: 96, TRAINING ACCURACY: 1.0 *****
+
+***** ITERATION: 128, TRAINING ACCURACY: 1.0 *****
+
+***** ITERATION: 160, TRAINING ACCURACY: 1.0 *****
+
+***** ITERATION: 192, TRAINING ACCURACY: 1.0 *****
+
+***** ITERATION: 224, TRAINING ACCURACY: 1.0 *****
+
+**************** NEW TRAINING SESSION ****************
+
+***** ITERATION: 0, TRAINING ACCURACY: 1.0 *****
+
+***** ITERATION: 32, TRAINING ACCURACY: 1.0 *****
+
+***** ITERATION: 64, TRAINING ACCURACY: 1.0 *****
+
+***** ITERATION: 96, TRAINING ACCURACY: 1.0 *****
+
+***** ITERATION: 128, TRAINING ACCURACY: 1.0 *****
+
+***** ITERATION: 160, TRAINING ACCURACY: 1.0 *****
+
+***** ITERATION: 192, TRAINING ACCURACY: 1.0 *****
+
+***** ITERATION: 224, TRAINING ACCURACY: 1.0 *****
+
+**************** NEW TRAINING SESSION ****************
+
+***** ITERATION: 0, TRAINING ACCURACY: 1.0 *****
+
+***** ITERATION: 32, TRAINING ACCURACY: 1.0 *****
+
+***** ITERATION: 64, TRAINING ACCURACY: 1.0 *****
+
+***** ITERATION: 96, TRAINING ACCURACY: 1.0 *****
+
+***** ITERATION: 128, TRAINING ACCURACY: 1.0 *****
+
+***** ITERATION: 160, TRAINING ACCURACY: 1.0 *****
+
+***** ITERATION: 192, TRAINING ACCURACY: 1.0 *****
+
+***** ITERATION: 224, TRAINING ACCURACY: 1.0 *****
+
+**************** NEW TRAINING SESSION ****************
+
+***** ITERATION: 0, TRAINING ACCURACY: 1.0 *****
+
+***** ITERATION: 32, TRAINING ACCURACY: 1.0 *****
+
+***** ITERATION: 64, TRAINING ACCURACY: 1.0 *****
+
+***** ITERATION: 96, TRAINING ACCURACY: 1.0 *****
+
+***** ITERATION: 128, TRAINING ACCURACY: 1.0 *****
+
+***** ITERATION: 160, TRAINING ACCURACY: 1.0 *****
+
+***** ITERATION: 192, TRAINING ACCURACY: 1.0 *****
+
+***** ITERATION: 224, TRAINING ACCURACY: 1.0 *****
+
+**************** NEW TRAINING SESSION ****************
+
+**************** NEW TRAINING SESSION ****************
+
+**************** NEW TRAINING SESSION ****************
+
+**************** NEW TRAINING SESSION ****************
+
+**************** NEW TRAINING SESSION ****************
+
+**************** NEW TRAINING SESSION ****************
+
+**************** NEW TRAINING SESSION ****************
+
+**************** NEW TRAINING SESSION ****************
+
+**************** NEW TRAINING SESSION ****************
+
+**************** NEW TRAINING SESSION ****************
+
+**************** NEW TRAINING SESSION ****************
+
+**************** NEW TRAINING SESSION ****************
+
+**************** NEW TRAINING SESSION ****************
+
+**************** NEW TRAINING SESSION ****************
+
+**************** NEW TRAINING SESSION ****************
+
+**************** NEW TRAINING SESSION ****************
+
+**************** NEW TRAINING SESSION ****************
+
+**************** NEW TRAINING SESSION ****************
+
+**************** NEW TRAINING SESSION ****************
+
+**************** NEW TRAINING SESSION ****************
+
+**************** NEW TRAINING SESSION ****************
+
+**************** NEW TRAINING SESSION ****************
+
+**************** NEW TRAINING SESSION ****************
+
+**************** NEW TRAINING SESSION ****************
+
+**************** NEW TRAINING SESSION ****************
+
+**************** NEW TRAINING SESSION ****************
+
+**************** NEW TRAINING SESSION ****************
+
+**************** NEW TRAINING SESSION ****************
+
+**************** NEW TRAINING SESSION ****************
+
+**************** NEW TRAINING SESSION ****************
+
+**************** NEW TRAINING SESSION ****************
+
+**************** NEW TRAINING SESSION ****************
+
+**************** NEW TRAINING SESSION ****************
+
+***** ITERATION: 0, TRAINING ACCURACY: 1.0 *****
+
+***** ITERATION: 32, TRAINING ACCURACY: 1.0 *****
+
+***** ITERATION: 64, TRAINING ACCURACY: 1.0 *****
+
+***** ITERATION: 96, TRAINING ACCURACY: 1.0 *****
+
+***** ITERATION: 128, TRAINING ACCURACY: 1.0 *****
+
+***** ITERATION: 160, TRAINING ACCURACY: 1.0 *****
+
+***** ITERATION: 192, TRAINING ACCURACY: 1.0 *****
+
+***** ITERATION: 224, TRAINING ACCURACY: 1.0 *****
+
+**************** NEW TRAINING SESSION ****************
+
+***** ITERATION: 0, TRAINING ACCURACY: 1.0 *****
+
+***** ITERATION: 32, TRAINING ACCURACY: 1.0 *****
+
+***** ITERATION: 64, TRAINING ACCURACY: 1.0 *****
+
+***** ITERATION: 96, TRAINING ACCURACY: 1.0 *****
+
+***** ITERATION: 128, TRAINING ACCURACY: 1.0 *****
+
+***** ITERATION: 160, TRAINING ACCURACY: 1.0 *****
+
+***** ITERATION: 192, TRAINING ACCURACY: 1.0 *****
+
+***** ITERATION: 224, TRAINING ACCURACY: 1.0 *****
+
+**************** NEW TRAINING SESSION ****************
+
+***** ITERATION: 0, TRAINING ACCURACY: 0.75 *****
+
+***** ITERATION: 32, TRAINING ACCURACY: 1.0 *****
+
+***** ITERATION: 64, TRAINING ACCURACY: 1.0 *****
+
+***** ITERATION: 96, TRAINING ACCURACY: 1.0 *****
+
+***** ITERATION: 128, TRAINING ACCURACY: 1.0 *****
+
+***** ITERATION: 160, TRAINING ACCURACY: 1.0 *****
+
+***** ITERATION: 192, TRAINING ACCURACY: 1.0 *****
+
+***** ITERATION: 224, TRAINING ACCURACY: 1.0 *****

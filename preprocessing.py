@@ -59,7 +59,6 @@ def allocate_data(text_file_path):
 #splits data from numpy array into batch_size number of random segments of shape (3, window size)
 def make_batches(hparams, pair_input):
     num_measurements = len(pair_input[1][0]) #number of accerelation measurements per axis
-    print("*******NUM_MEASUREMENTS={0}".format(num_measurements))
     data_batch, label_batch = [], []
     for i in range(hparams.batch_size):
         random_index = random.randint(0, num_measurements - hparams.batch_size)
@@ -76,7 +75,6 @@ def make_batches(hparams, pair_input):
         # label_batch = np.append(label_batch, total_accs[0][random_index:random_index + hparams.batch_size], axis=0)
         data_batch.append(data_to_add)
         label_batch.extend(labels_to_add)
-    print(len(label_batch[0]))
     return np.array(label_batch), np.array(data_batch)
 
 #returns a one-hot label based on what stroke the datafile represents
