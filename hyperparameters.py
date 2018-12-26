@@ -6,6 +6,8 @@ FRAME_LENGTH = 512
 
 hparams = tf.contrib.training.HParams(
 
+    strokes = ["butterfly", "backstroke", "breastroke", "freestyle"],
+
     #graph parameters
     num_Convs = 3,
     num_FCs = 2,
@@ -13,7 +15,7 @@ hparams = tf.contrib.training.HParams(
     window_size = 128, #change later, corresponds to Height/H
     input_width = 1,
     input_channels = 3,
-    num_classes = 4, #there are 4 strokes, if not swimming then prob in classification should be low, so use threshold
+    num_classes = 4, 
     treshold_prob = .3,
     dropout_rate = .5,
 
@@ -38,7 +40,7 @@ hparams = tf.contrib.training.HParams(
     #Training parameters
     max_iterations = 256 , #int(1e6),
     print_loss_freq = 32,
-    writing_frequency = 32,
+    writing_frequency = 8,
     learning_rate = .0003,
 	max_steps = 10,
 	batch_size = 128,

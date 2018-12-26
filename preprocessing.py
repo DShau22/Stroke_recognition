@@ -15,7 +15,7 @@ def augment_data(hparams):
     #os.chdir(hparams.data_dir)
     for filename in glob.glob(hparams.data_dir + '*.txt'):
         with open(filename, 'r') as raw:
-            with open("aug_" + filename, "w+") as aug:
+            with open(filename[:len(filename) - 4] + "_aug.txt", "w+") as aug:
                 for raw_line in raw:
                     accs_data = raw_line.strip('\n').split(',')
                     acc_data = cast_and_fix_bad_data(accs_data)
@@ -66,68 +66,38 @@ def make_batches(hparams, pair_input):
         data_to_add = list(zip(pair_input[1][0][random_index:random_index + hparams.batch_size],
                                pair_input[1][1][random_index:random_index + hparams.batch_size],
                                pair_input[1][2][random_index:random_index + hparams.batch_size],))
-        # data_to_add = [pair_input[1][0][random_index:random_index + hparams.batch_size]] + \
-        #               [pair_input[1][1][random_index:random_index + hparams.batch_size]] + \
-        #               [pair_input[1][2][random_index:random_index + hparams.batch_size]]
         labels_to_add = pair_input[0]
-        # data_batch = np.append(data_batch, total_accs[1][0:len(total_accs[1]),
-        #                                                  random_index:random_index + hparams.batch_size], axis=0)
-        # label_batch = np.append(label_batch, total_accs[0][random_index:random_index + hparams.batch_size], axis=0)
+
         data_batch.append(data_to_add)
         label_batch.extend(labels_to_add)
     return np.array(label_batch), np.array(data_batch)
 
 #returns a one-hot label based on what stroke the datafile represents
 def determine_label(stroke):
-    if stroke.lower() == 'butterfly':
+    if 'fly' in stroke.lower():
         return [1, 0, 0, 0]
-    elif stroke.lower() == 'backstroke':
+    elif 'back' in stroke.lower():
         return [0, 1, 0, 0]
-    elif stroke.lower() == 'breastroke':
+    elif 'breast' in stroke.lower():
         return [0, 0, 1, 0]
-    elif stroke.lower() == 'freestyle':
+    elif 'free' in stroke.lower():
         return [0, 0, 0, 1]
     else:
         raise Exception("Invalid stroke! Check your spelling and make sure there are not spaces.")
-    # if "butterfly" in filename.lower():
-    #     return [1, 0, 0, 0]
-    # elif "backstroke" in filename.lower():
-    #     return [0, 1, 0, 0]
-    # elif "breastroke" in filename.lower():
-    #     return [0, 0, 1, 0]
-    # elif "freestyle" in filename.lower():
-    #     return [0, 0, 0, 1]
-    # else:
-    #     raise Exception('a stroke name must be present in the file name')
 
 def preprocess(hparams, stroke):
-    pair = [[], []] #pair for feed_dict
-    #os.chdir(hparams.data_dir)
+    pair = [[], [[],[],[]]] #pair for feed_dict
+    pair[0].append(determine_label(stroke))
+
     for filename in glob.glob(hparams.data_dir + '*' + stroke + '*.txt'):
-        #arr of z, y, x accelerations over time
-        #stroke_data = [[],[],[]]
+
+        print("FILENAME IS: {0}".format(filename))
+
         total_accs, line_count = allocate_data(filename)
-        # for i in range(line_count):
-        #     pair[0].append(label_vector)
-        pair[1].extend(total_accs)
-        pair[0].append(determine_label(stroke))
-        # for line in f:
-        #     accs = line.strip('\n').split(',') #puts z y x accelerations into array
-        #     accs = cast_and_fix_bad_data(accs)
-        #     stroke_data[0].append(accs[0])
-        #     stroke_data[1].append(accs[1])
-        #     stroke_data[2].append(accs[2])
-        #     pair[0].extend(label_vector)
-        # exclude = set(range(115, 189)) | set(range(278, 302)) | set(range(480, 505)) |\
-        #             set(range(688, 752)) | set(range(903, 956)) | set(range(1104, 1137)) | set(range(1274, 1313)) | set(range(1427, 4000))
-        # stroke_data[0] = [el for el in stroke_data[0] if el not in exclude]
-        # stroke_data[1] = [el for el in stroke_data[1] if el not in exclude]
-        # stroke_data[2] = [el for el in stroke_data[2] if el not in exclude]
-        # exclude = range(128, 4000)
-        # stroke_data[0] = [stroke_data[0][i] for i in range(count) if i not in exclude]
-        # stroke_data[1] = [stroke_data[1][i] for i in range(count) if i not in exclude]
-        # stroke_data[2] = [stroke_data[2][i] for i in range(count) if i not in exclude]
-        #pair[1].extend(stroke_data)
+        for i in range(len(pair[1])):
+            pair[1][i].extend(total_accs[i])
+
         print("**** LENGTH OF PAIR[0] IS: {0}".format(len(pair[0])) +" ****")
-        print("**** LENGTH OF Y ACCS IS: {0}".format(len(pair[1][1])) +" ****")
+        print("**** LENGTH OF PAIR[1] IS: {0}".format(len(pair[1])) +" ****")
+        print("**** LENGTH OF Y ACCELERATIONS IS: {0}".format(len(pair[1][1])) +" ****")
     return np.array(pair)

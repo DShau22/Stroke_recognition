@@ -15,7 +15,7 @@ def make_feed_dict(hparams, pair_input, data_placeholder, label_placeholder):
     return {data_placeholder: data_batch,
             label_placeholder: label_batch}
 
-def run_training(hparams, data_placeholder, label_placeholder, optimizer, accuracy, pair_input, summaries):
+def run_training(hparams, data_placeholder, label_placeholder, optimizer, accuracy, input_pairs, summaries):
     with tf.Session() as sess:
         sess.run(tf.global_variables_initializer())
         start_time = time.time()
@@ -27,6 +27,7 @@ def run_training(hparams, data_placeholder, label_placeholder, optimizer, accura
                 f.write('\n**************** NEW TRAINING SESSION ****************\n')
 
         for i in range(hparams.max_iterations):
+            pair_input = input_pairs[random.randint(0, len(input_pairs) - 1)]
             feed_dict = make_feed_dict(hparams, pair_input, data_placeholder, label_placeholder)
             sess.run(optimizer, feed_dict=feed_dict)
 
@@ -38,6 +39,7 @@ def run_training(hparams, data_placeholder, label_placeholder, optimizer, accura
                 acc = sess.run(accuracy, feed_dict=feed_dict)
                 msg = "\n***** ITERATION: {0}, TRAINING ACCURACY: {1} *****\n"
                 print(msg.format(i, acc))
+                print(pair_input[0])
 
             if i % hparams.writing_frequency == 0:
                 acc = sess.run(accuracy, feed_dict=feed_dict)
