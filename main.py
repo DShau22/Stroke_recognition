@@ -15,7 +15,7 @@ def main():
     #don't actually use loss for now
     loss, optimizer, accuracy, data_placeholder, label_placeholder, summaries = graph.build_graph(hparams)
     input_pairs = []
-    #input_pairs.append(preprocessing.preprocess(hparams, 'butterfly'))
+    input_pairs.append(preprocessing.preprocess(hparams, 'butterfly'))
     input_pairs.append(preprocessing.preprocess(hparams, 'backstroke'))
     #input_pairs.append(preprocessing.preprocess(hparams, 'breastroke'))
     input_pairs.append(preprocessing.preprocess(hparams, 'freestyle'))

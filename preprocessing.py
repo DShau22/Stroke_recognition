@@ -83,7 +83,7 @@ def determine_label(stroke):
     elif 'free' in stroke.lower():
         return [0, 0, 0, 1]
     else:
-        raise Exception("Invalid stroke! Check your spelling and make sure there are not spaces.")
+        raise Exception("Invalid stroke! Check your spelling and make sure there are no spaces.")
 
 def preprocess(hparams, stroke):
     pair = [[], [[],[],[]]] #pair for feed_dict
@@ -101,3 +101,12 @@ def preprocess(hparams, stroke):
         print("**** LENGTH OF PAIR[1] IS: {0}".format(len(pair[1])) +" ****")
         print("**** LENGTH OF Y ACCELERATIONS IS: {0}".format(len(pair[1][1])) +" ****")
     return np.array(pair)
+
+def write_part(begin, end, filename):
+    with open(filename, 'r') as r:
+        with open(file, 'a+') as a:
+            for i in range(begin):
+                r.readline()
+            for i in range(end):
+                line = r.readline()
+                a.write(line)
